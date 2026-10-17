@@ -1,0 +1,22 @@
+{% extends 'homepage.html' %}
+
+{% block titulo %}
+  Feed - FakePinterest
+{% endblock %}
+
+{% block body %}
+  {% include "navbar.html" %}
+
+  <div class="container">
+    <h2>Feed</h2>
+    <div class="fotos-container">
+      {% for foto in fotos %}
+        <div class="bloco-imagem">
+          <img src="{{ url_for('static', filename='fotos_posts/' + foto.imagem) }}" alt="Foto">
+        </div>
+      {% else %}
+        <p>Nenhuma foto publicada ainda.</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'homepage.html' %}
+
+{% block titulo %}
+  Perfil de {{ usuario.username }}
+{% endblock %}
+
+{% block body %}
+  {% include "navbar.html" %}
+
+  {% if form %}
+    <div class="container">
+      <form method="POST" enctype="multipart/form-data" class="bloco-add-img">
+        {{ form.csrf_token }}
+        <h2>{{ usuario.username }} - Enviar foto</h2>
+
+        <div class="bloco-input-botao">
+          <div class="bloco-arquivo">
+            <label class="botao-arquivo" for="foto">Escolher arquivo</label>
+            {{ form.foto(class="input-foto") }}
+          </div>
+
+          <div class="bloco-enviar">
+            {% if form.botao %}
+              {{ form.botao(class="botao-login") }}
+            {% else %}
+              <button type="submit" class="botao-login">Enviar Foto</button>
+            {% endif %}
+          </div>
+        </div>
+      </form>
+    </div>
+  {% endif %}
+
+  <hr>
+
+  <h2>Fotos publicadas</h2>
+  <div class="fotos-container">
+    {% for foto in usuario.fotos %}
+      <div class="bloco-imagem">
+        <img src="{{ url_for('static', filename='fotos_posts/' + foto.imagem) }}" alt="Foto de {{ usuario.username }}">
+      </div>
+    {% else %}
+      <p>Nenhuma foto publicada ainda.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

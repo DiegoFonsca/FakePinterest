@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  color: #333;
+}
+
+nav {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  color: #c00;
+  font-size: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: inline;
+}
+
+img {
+  width: 100%;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.logo-pinterest {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  column-gap: 4px;
+}
+
+.link-nav {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+
+.link-nav:hover {
+  text-decoration: underline;
+}
+
+.restante-nav {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  width: fit-content;
+}
+
+.container-login {
+  padding-bottom: 100px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bg-imagem-pinterest {
+  width: 100%;
+  position: fixed;
+  top: 50vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.container-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+}
+
+.popup {
+  width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  padding: 35px;
+  border-radius: 32px;
+  background-color: #fff;
+}
+
+/* Garante que botões dentro de formulários no popup ocupem 100% da largura */
+.popup .botao-login {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  display: block;
+}
+
+.div-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5px;
+}
+
+.div-botao {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5px;
+  margin-top: 10px;
+}
+
+.label {
+  margin-right: auto;
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+.input {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px;
+  border: 2px solid #cdcdcd;
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+}
+
+.botao-login {
+  border-radius: 25px;
+  padding: 15px 20px;
+  border: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #e60023;
+  color: #fff;
+}
+
+.botao-login:hover {
+  background-color: #d50c22;
+}
+
+.link-criarconta {
+  color: #333;
+  text-decoration: none;
+}
+
+.link-criarconta:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.botao-perfil a {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+.botao-perfil a:hover {
+  background-color: #777;
+  text-decoration: none;
+}
+
+.conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 100%;
+  max-width: 100vw;
+  column-gap: 10px;
+  row-gap: 30px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* --- ESTILO DAS FOTOS NO FEED/PERFIL --- */
+
+.fotos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 15px;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.bloco-imagem {
+  width: 230px;
+  height: 320px;
+  border-radius: 20px;  /* Bordas arredondadas no cartão */
+  overflow: hidden;     /* Recorta a imagem nos cantos do cartão */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bloco-imagem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.bloco-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;  /* Bordas arredondadas na imagem */
+}
+
+/* --- FORMULÁRIO DE UPLOAD --- */
+
+.bloco-add-img {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 15px;
+}
+
+.bloco-input-botao {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.bloco-arquivo {
+  background-color: #eee;
+  padding: 8px 18px;
+  border-radius: 55px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.botao-arquivo {
+  padding: 6px 12px;
+  border-radius: 15px;
+  border: 0;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.bloco-add-img .botao-login {
+  width: auto;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 25px;
+  display: inline-block;
+  margin: 0;
+}
